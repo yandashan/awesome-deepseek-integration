@@ -1,7 +1,7 @@
  name: Sync to Gitee
  on:
    push:
-     branches: [main, master]  # 监听指定分支的推送
+     branches: [main]  # 监听指定分支的推送
    schedule:
      - cron: '0 */1 * * *'     # 每1小时同步一次（可选）
  jobs:
