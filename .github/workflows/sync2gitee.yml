@@ -25,6 +25,6 @@ jobs:
           cat /home/runner/.git-credentials
       - name: Mirror to Gitee
         run: |
-          git remote add gitee https://gitee.com/yandashan666/awesome-deepseek-integration.git
+          git remote add gitee https://gitee.com/${{ secrets.GITEE_USER }}/awesome-deepseek-integration.git
           git push --all --force gitee
           git push --tags --force gitee
