@@ -18,7 +18,11 @@ jobs:
           git config --global user.email "actions@github.com"
           mkdir -p /home/runner/
           git config --global credential.helper 'store --file /home/runner/.git-credentials'
+          # 确保此处凭据格式正确
           echo "https://${{ secrets.GITEE_USER }}:${{ secrets.GITEE_TOKEN }}@gitee.com" > /home/runner/.git-credentials
+      - name: Debug Credentials
+        run: |
+          cat /home/runner/.git-credentials
       - name: Mirror to Gitee
         run: |
           git remote add gitee https://gitee.com/yandashan666/awesome-deepseek-integration.git
